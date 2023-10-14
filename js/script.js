@@ -26,17 +26,16 @@ getWord();
 const wordBeingGuessed = function (word) {
  const wordBeingGuessedLetters = [];
 for (const letter of word){
-//console.log(letter);
 wordBeingGuessedLetters.push("●");
  }
  wordInProgress.innerText = wordBeingGuessedLetters.join("");
 };
-//wordBeingGuessed(word);
+
 
 guessButton.addEventListener ("click", function (e){
  e.preventDefault();
 const guess = inputLetter.value;
-//console.log(guess);
+
 
  message.innerText = "";
 const goodGuess = validate(guess);
@@ -64,7 +63,7 @@ guess = guess.toUpperCase();
 if (guessedLetters.includes(guess))
 {message.innerText ="You already guessed that letter. Please choose a different letter";}
 else {guessedLetters.push (guess);
-//console.log(guessedLetters);
+
 
 updateLetters();
 updateGuessesRemaining(guess);
@@ -91,7 +90,7 @@ if (guessedLetters.includes(letter))
 revealWord.push("●");
 }
  }
- //console.log(revealWord);
+ 
 wordInProgress.innerText = revealWord.join("");
 checkIfWin();
 };
